@@ -31,7 +31,7 @@ export class UpdateComponent implements OnInit {
     this.form = new FormGroup({
       name:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       email: new FormControl('', [ Validators.required, Validators.email ]),
-      password: new FormControl('', [ Validators.required, ])
+      // password: new FormControl('', [ Validators.required, ])
     });
 
   }
@@ -43,7 +43,7 @@ export class UpdateComponent implements OnInit {
   submit(){
     console.log(this.form.value);
     this.u.name=this.form.value.name;
-    this.u.password=this.form.value.password;
+    // this.u.password=this.form.value.password;
     this.u.email=this.form.value.email;
  
     console.log(this.u);

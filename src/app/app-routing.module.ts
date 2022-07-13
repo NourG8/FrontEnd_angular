@@ -9,6 +9,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ListUsersComponent } from './user/list-users/list-users.component';
 import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
+import { DetailsComponent } from './details/details.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
@@ -21,6 +22,7 @@ const routes :Routes =[
   {path:'listusers', component: ListUsersComponent},
   {path:'create', component: CreateComponent},
   {path:'update/:id', component: UpdateComponent},
+  {path:'details/:id', component: DetailsComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'reset-password', component: ResetPasswordComponent},
 

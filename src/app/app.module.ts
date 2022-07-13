@@ -25,6 +25,7 @@ import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { DetailsComponent } from './details/details.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -42,6 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdateComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+    DetailsComponent,
   ],
   imports: [
     MatTableExporterModule,

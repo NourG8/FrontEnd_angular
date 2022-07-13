@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="d-flex justify-content-center mt-5" >
+      <div class="card">
+        <h5 class="card-header">User Details</h5>
+        <div class="card-body">
+          <h5 class="card-title">Name:{{User.name}}</h5>
+          <br>
+          <p class="card-text">Email: {{User.email}}</p>
+          <p class="card-text">Role: {{User.role}}</p>
+          <p class="card-text">Account confirmation: {{User.valid}}</p>
+       
+          <button type="button" (click)="invalid(User.id)" *ngIf="User.valid=='valid'" class="btn btn-danger">invalidate</button> &nbsp;
+          <button type="button" (click)="valid(User.id)" *ngIf="User.valid=='Non valid'" class="btn btn-success">valid</button> &nbsp;
+          <a routerLink='/listusers' class="btn btn-info">Back to list</a>
+        </div>
+      </div>
+    </div>
+  </div>

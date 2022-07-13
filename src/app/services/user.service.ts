@@ -11,6 +11,9 @@ import { User } from '../models/user';
 })
 export class UserService {
   private apiURL = "http://localhost:8000/api/users/";
+  
+  private apiURL1 = "http://localhost:8000/api/verif/";
+  private apiURL2 = "http://localhost:8000/api/create";
 
   httpOptions = {
      headers: new HttpHeaders({
@@ -30,7 +33,7 @@ export class UserService {
  }
 
  create(user :any): Observable<any> {
-   return this.httpClient.post<any>(this.apiURL, JSON.stringify(user), this.httpOptions)
+   return this.httpClient.post<any>(this.apiURL2, JSON.stringify(user), this.httpOptions)
    .pipe(
      catchError(this.errorHandler)
    )
@@ -56,6 +59,13 @@ export class UserService {
      catchError(this.errorHandler)
    )
  }
+
+ verif(mail:any){
+  return this.httpClient.get<User>(this.apiURL1 + mail, this.httpOptions)
+  .pipe(
+    catchError(this.errorHandler)
+  )
+}
 
  errorHandler(error:any) {
    let errorMessage = '';

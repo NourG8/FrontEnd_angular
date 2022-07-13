@@ -1,8 +1,8 @@
 <section style="margin:150px;margin-top:20px;">
 
     <div class="d-flex justify-content-between">
-      <h4>List person</h4>
-      <a routerLink="/create" class="btn btn-success">Create New Person</a>
+      <h4>List users</h4>
+      <a routerLink="/create" class="btn btn-success">Create New User</a>
     </div>
 
     <br>
@@ -11,16 +11,21 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Email</th>
-        <th width="220px">Action</th>
+        <th style="padding-left:50px;">Email</th>
+        <th style="padding-right:100px;">Role</th>
+        <th style="padding-right:100px;">Valid</th>
+        <th width="200px" style="padding-left:75px;">Action</th>
       </tr>
       <tr *ngFor="let person of persons">
-        <td>{{ person.id }}</td>
+        <td >{{ person.id }}</td>
         <td>{{ person.name }}</td>
         <td>{{ person.email }}</td>
+        <td>{{ person.role }}</td>
+        <td>{{ person.valid }}</td>
         <td>
-          <a href="#" [routerLink]="['/update/', person.id  ]" class="btn btn-primary">Edit</a>
-          <button type="button" (click)="deletePerson(person.id)" class="btn btn-danger">Delete</button>
+          <a href="#" [routerLink]="['/details/', person.id  ]" class="btn">  <i class="fa fa-info-circle fa-2x" > </i></a> 
+          <a href="#" [routerLink]="['/update/', person.id  ]" class="btn"> <i class="fa fa-pen fa-2x" style="color:#3E8D07;"></i></a> 
+          <button type="button" (click)="deletePerson(person.id)"  class="btn "><i class="fa fa-trash fa-2x" style="color:#D41616;"></i></button>
         </td>
       </tr>
     </table>
