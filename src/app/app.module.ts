@@ -1,16 +1,74 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { MatDialogModule} from "@angular/material/dialog";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {MatTableModule} from '@angular/material/table';
+
+import {MatTableExporterModule } from 'mat-table-exporter';
+import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
+import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from './login/login.component';
+import { ListUsersComponent } from './user/list-users/list-users.component';
+import { CreateComponent } from './create/create.component';
+import { UpdateComponent } from './update/update.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    NavbarComponent,
+    DashboardComponent,
+    RegisterComponent,
+    LogoutComponent,
+    ListUsersComponent,
+    CreateComponent,
+    UpdateComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
-    BrowserModule
+    MatTableExporterModule,
+    MatTableModule,
+    BrowserModule,
+    HttpClientModule,
+    MatDialogModule,
+    MatMenuModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    }),
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

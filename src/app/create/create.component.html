@@ -1,0 +1,60 @@
+<div style="margin:150px;margin-top:20px;">
+
+    <div class="d-flex justify-content-between">
+      <h4>Form customer</h4>
+      <a href="#" routerLink="/listusers" class="btn btn-primaryt">Back</a>
+    </div>
+  
+    <hr/>
+  
+      <form [formGroup]="form" (ngSubmit)="submit()">
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="title">Name:</label>
+                <input
+                  formControlName="name"
+                  id="name"
+                  type="text"
+                  class="form-control">
+                <!-- <div *ngIf="this.form.controls.name.touched && this.form.controls.name.invalid" class="alert alert-danger">
+                    <div *ngIf="this.form.controls.name.errors.required">*Name is required.</div>
+                    <div *ngIf="this.form.controls.name.errors.pattern">*The name must only contain letters.</div>
+                </div> -->
+              </div>
+          </div>
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="email">Email:</label>
+                <input
+                  formControlName="email"
+                  id="email"
+                  type="text"
+                  class="form-control">
+                <!-- <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                    <div *ngIf="f.email.errors.required">*Email is required.</div>
+                    <div *ngIf="f.email.errors.email">*The email must be a valid email address.</div> 
+                </div> -->
+              </div>
+          </div>
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="password">password:</label>
+                <input
+                  formControlName="password"
+                  id="password"
+                  type="text"
+                  class="form-control">
+                <!-- <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                    <div *ngIf="f.password.errors.required">*password is required.</div>
+                    <div *ngIf="f.password.errors.pattern">*The password must only contain numbers.</div>
+                </div> -->
+              </div>
+          </div>
+  
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+      </form>
+  </div>
+  
